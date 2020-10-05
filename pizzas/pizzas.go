@@ -8,9 +8,9 @@ import (
 )
 
 type Pizza struct {
-	ID int `json:"id"`
-	Name string `json:"name"`
-	Price int `json:"price"`
+	ID		int			`json:"id"`
+	Name	string	`json:"name"`
+	Price	int			`json:"price"`
 }
 
 type Pizzas []Pizza
@@ -26,9 +26,9 @@ func (ps Pizzas) FindByID(ID int) (Pizza, error) {
 }
 
 type Order struct {
-	PizzaID int `json:"pizza_id"`
-	Quantity int `json:"quantity"`
-	Total int `json:"total"`
+	PizzaID		int	`json:"pizza_id"`
+	Quantity	int	`json:"quantity"`
+	Total			int	`json:"total"`
 }
 
 type Orders []Order
@@ -66,6 +66,12 @@ func (oh ordersHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		var o Order
 
 		if len(*oh.pizzas) == 0 {
+			http.Error(w, "Error: No pizzas found", http.StatusNotFound)
+			return
+		}
+
+		err := json.NewDecoder(r.Body).Decode(&o)
+		if err != nil {
 			http.Error(w, "Can't decode body", http.StatusBadRequest)
 			return
 		}
@@ -90,19 +96,19 @@ func main() {
 	var orders Orders
 	pizzas := Pizzas{
 		Pizza{
-			ID: 1,
-			Name: "Pepperoni",
-			Price: 12,
+			ID:			1,
+			Name:		"Pepperoni",
+			Price:	12,
 		},
 		Pizza{
-			ID: 2,
-			Name: "Capricosa",
-			Price: 11,
+			ID:			2,
+			Name:		"Capricosa",
+			Price:	11,
 		},
 		Pizza{
-			ID: 3,
-			Name: "Margherita",
-			Price: 10,
+			ID:			3,
+			Name:		"Margherita",
+			Price:	10,
 		},
 	}
 
