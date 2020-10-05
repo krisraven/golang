@@ -5,5 +5,5 @@
 
 ## Examples
 
-`curl -X GET localhost:8080/pizzas`
-`curl -X POST localhost:8080/orders -d '{"pizza_id":1,"quantity":4}'`
+- `curl -X GET localhost:8080/pizzas`
+- `curl -X POST localhost:8080/orders -d '{"pizza_id":1,"quantity":4}'`
