@@ -15,7 +15,7 @@ func main() {
 		fmt.Println(j)
 	}
 
-	// for lopp w/o condition will loop forver and only stop if break or return
+	// for loop w/o condition will loop forver and only stop if break or return
 	for {
 		fmt.Println("loop")
 		break
