@@ -17,8 +17,8 @@ func main() {
 	case 3:
 		fmt.Println("three")
 	}
-	// use commands to separate multiple expressions
 	// can use default case
+	// use commands to separate multiple expressions
 	switch time.Now().Weekday() {
 	case time.Saturday, time.Sunday:
 		fmt.Println("It's the weekend")
