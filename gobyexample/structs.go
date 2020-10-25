@@ -17,7 +17,7 @@ func newPerson(name string) *person {
 func main() {
 	fmt.Println(person{"Bob", 20}) // this creates a new struct
 	fmt.Println(person{name: "Alice", age: 20})
-	fmt.Println(person{name: "Fred"})
+	fmt.Println(person{name: "Fred"}) // omitted fields will be zero-valued
 	fmt.Println(&person{name: "Ann", age: 40}) // an & prefix yields a pointer to the struct
 	fmt.Println(newPerson("Jon")) // its idiomatic to encapsulate new struct creation in constructor functions
 
