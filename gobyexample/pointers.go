@@ -13,7 +13,10 @@ func zeroptr(iptr *int) {
 }
 
 func main() {
-	i := 1
+	i := 100
+	j := 200
+	k := 300
+	l := 400
 	fmt.Println("initial: ", i)
 
 	zeroval(i)
@@ -22,6 +25,9 @@ func main() {
 	zeroptr(&i)
 	fmt.Println("zeroptr: ", i)
 
-	// the &i syntax gives the memory add of a pointer to i
-	fmt.Println("pointer: ", &i)
+	// the &i syntax gives the memory address of a pointer to i
+	fmt.Println("pointer:", &i)
+	fmt.Println("pointer:", &j)
+	fmt.Println("pointer:", &k)
+	fmt.Println("pointer:", &l)
 }

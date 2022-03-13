@@ -16,7 +16,7 @@ func main() {
 	}
 
 	// for loop w/o condition will loop forver and only stop if break or return
-	for {
+	for j := 2; j <= 10; j++  {
 		fmt.Println("loop")
 		break
 	}

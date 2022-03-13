@@ -17,7 +17,7 @@ func main() {
 		}
 	}
 
-	kvs := map[string]string{"a": "apple", "b": "banana"} // range on map iterates of key/value pairs
+	kvs := map[string]string{"a": "apple", "d": "dragon"} // range on map iterates of key/value pairs
 	for k, v := range kvs {
 		fmt.Printf("%s -> %s\n", k, v) // a -> apple   b -> banana
 	}
@@ -25,8 +25,8 @@ func main() {
 	for k := range kvs {
 		fmt.Println("key: ", k) // b   a
 	}
-	// range on strings iterates of Onicode code points
-	for i, c := range "go" {
-		fmt.Println(i, c) // 0 103   1 111
+	// range on strings iterates of Unicode code points
+	for i, c := range "recipe" {
+		fmt.Println(i, c) // 0 114	1 101	2 99	3 105	4 112	5 101
 	}
 }

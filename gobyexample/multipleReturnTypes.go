@@ -11,6 +11,7 @@ func main() {
 	fmt.Println(a)
 	fmt.Println(b)
 
-	_, c := vals() // if a subsete of the returned values is needed use the _ identifier
+	c, _ := vals() // if a subset of the returned values is needed use the _ identifier
+	// there is 2 values. 1st is chosen (ie a = c) and 2nd one is blank (ie _ = a)
 	fmt.Println(c)
 }
